@@ -32,6 +32,16 @@ async def send_welcome(message: types.Message):
     # await context.bot.send_message(chat_id=update.effective_chat.id, text=result)
     await message.answer(result)
 
+@dp.message_handler(commands=['addShop']) # Функция добавления магазина в БД
+async def addShop(message: types.Message):
+    await message.answer("Введите название магазина")
+
+@dp.message_handler(commands=['graph']) # Отправка графика
+async def show_graph(message: types.Message):
+    await bot.send_photo(photo = "https://images.satu.kz/159709422_zaglushka-vnutrennyaya-34.jpg")
+    await message.answer("Ответ")
+
+
 
 if __name__ == '__main__':
     # Connection to MySQL Server and Building app via token
