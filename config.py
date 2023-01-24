@@ -1,4 +1,4 @@
-API_TOKEN = '5633933532:AAFHjtou1on6oImwMEHvsa9wWYt-Ww1KmTs'
+API_TOKEN = 'token here'
 
 HELP_COMMANDS = """
 Список команд бота:
