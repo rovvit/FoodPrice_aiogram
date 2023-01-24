@@ -1,9 +1,8 @@
 import logging
 import mysql.connector
-
+from config import API_TOKEN, HELP_COMMANDS
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5633933532:AAFHjtou1on6oImwMEHvsa9wWYt-Ww1KmTs'
 
 # Configure logging
 logging.basicConfig(
@@ -18,11 +17,11 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    await message.reply("Бот, который помогает отслеживать динамику цен в магазинах\nАвтор: github.com/rovvit")
+    await message.answer("Бот, который помогает отслеживать динамику цен в магазинах\nАвтор: github.com/rovvit")
 
 @dp.message_handler(commands=['help'])
 async def send_welcome(message: types.Message):
-    await message.reply("Здесь будет справка")
+    await message.answer(HELP_COMMANDS)
 
 @dp.message_handler(commands=['list'])
 async def send_welcome(message: types.Message):
@@ -31,7 +30,7 @@ async def send_welcome(message: types.Message):
         result = result + shop[1] + '\n'
     print(result)
     # await context.bot.send_message(chat_id=update.effective_chat.id, text=result)
-    await message.reply(result)
+    await message.answer(result)
 
 
 if __name__ == '__main__':
@@ -48,4 +47,5 @@ if __name__ == '__main__':
     shopList = []
     for _ in mycursor:
         shopList.append(_)
+
     executor.start_polling(dp, skip_updates=True)
