@@ -1,4 +1,4 @@
-API_TOKEN = '5633933532:AAESnEpMdd9n6ogjMqEsAs7nZ3nMKI0jTdc'
+API_TOKEN = 'token here'
 
 HELP_COMMANDS = """
 Список команд бота:
@@ -9,7 +9,3 @@ HELP_COMMANDS = """
 /addPrice - добавить стоимость товара
 /graph - строит и показывает график
 """
-
-BOT_USER = "bot_user"
-BOT_PASSWORD = "botuser"
-BOT_DB = "testbase"
